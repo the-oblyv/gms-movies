@@ -19,7 +19,7 @@ async function getMovie() {
     }
     const iframe = document.getElementById("iframe");
     if (iframe) {
-      iframe.src = `https://www.vidlink.pro/movie/${ID}?autoplay=false`;
+      iframe.src = `https://watch.vidora.su/watch/movie/${ID}`;
     }
   } catch (error) {
     console.log("Error fetching data:", error);
