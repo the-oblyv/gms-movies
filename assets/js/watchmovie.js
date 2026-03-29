@@ -19,7 +19,7 @@ async function getMovie() {
     }
     const iframe = document.getElementById("iframe");
     if (iframe) {
-      iframe.src = `https://watch.vidora.su/watch/movie/${ID}`;
+      iframe.src = `https://www.vidking.net/embed/movie/${ID}?color=9146ff`;
     }
   } catch (error) {
     console.log("Error fetching data:", error);
