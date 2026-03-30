@@ -1,5 +1,6 @@
 {
   "rewrites": [
+    { "source": "/movies", "destination": "/movies.html" },
     { "source": "/tv", "destination": "/tv.html" }
   ]
 }
