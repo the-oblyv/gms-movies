@@ -13,18 +13,7 @@ async function getTVShowData() {
   const iframe = document.getElementById("iframe");
 
   if (season && episode) {
-    if (iframe) {
-      iframe.src = `https://nebulaflix.stream/?st=${ID}&season=${season}&episode=${episode}&server=1`;
-
-      // 🔒 STRICT sandbox (no same-origin)
-      iframe.setAttribute(
-        "sandbox",
-        "allow-scripts allow-presentation"
-      );
-
-      // 🔒 Hide referrer
-      iframe.setAttribute("referrerpolicy", "no-referrer");
-    }
+    // Iframe setup moved after fetching show data
   } else {
     location.href = `tv?id=${ID}&s=1&e=1`;
     return;
@@ -39,6 +28,21 @@ async function getTVShowData() {
     const filteredSeasons = show.seasons.filter(
       (s) => s.name !== "Specials"
     );
+
+    // 🎥 Iframe setup
+    const iframe = document.getElementById("iframe");
+    if (iframe) {
+      iframe.src = `https://nebulaflix.stream/?st=${show.imdb_id}&season=${season}&episode=${episode}&server=1`;
+
+      // 🔒 STRICT sandbox (no same-origin)
+      iframe.setAttribute(
+        "sandbox",
+        "allow-scripts allow-presentation"
+      );
+
+      // 🔒 Hide referrer
+      iframe.setAttribute("referrerpolicy", "no-referrer");
+    }
 
     populateSeasonSelector(filteredSeasons, season, episode);
   } catch (error) {
