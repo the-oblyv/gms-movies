@@ -14,7 +14,7 @@ async function getTVShowData() {
 
   if (season && episode) {
     if (iframe) {
-      iframe.src = `https://www.vidking.net/embed/tv/${ID}/${season}/${episode}?color=9146ff`;
+      iframe.src = `https://nebulaflix.stream/show?st=${ID}&season=${season}&episode=${episode}&server=1`;
 
       // 🔒 STRICT sandbox (no same-origin)
       iframe.setAttribute(
