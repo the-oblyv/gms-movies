@@ -26,7 +26,7 @@ async function getMovie() {
     // 🎥 Iframe setup
     const iframe = document.getElementById("iframe");
     if (iframe) {
-      iframe.src = `https://www.vidking.net/embed/movie/${ID}?color=9146ff`;
+      iframe.src = `https://nebulaflix.stream/movie?mt=${ID}&server=1`;
 
       // 🔒 STRICT sandbox (no same-origin)
       iframe.setAttribute(
