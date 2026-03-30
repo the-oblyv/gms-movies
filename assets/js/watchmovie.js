@@ -17,10 +17,16 @@ async function getMovie() {
     if (titleElement) {
       titleElement.innerHTML = movie.title;
     }
-    const iframe = document.getElementById("iframe");
-    if (iframe) {
-      iframe.src = `https://www.vidking.net/embed/movie/${ID}?color=9146ff`;
-    }
+   const iframe = document.getElementById("iframe");
+if (iframe) {
+  iframe.src = `https://www.vidking.net/embed/movie/${ID}?color=9146ff`;
+
+  // Apply sandbox restrictions
+  iframe.setAttribute(
+    "sandbox",
+    "allow-scripts allow-same-origin allow-presentation"
+  );
+}
   } catch (error) {
     console.log("Error fetching data:", error);
   }
