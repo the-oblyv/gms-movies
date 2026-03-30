@@ -16,10 +16,10 @@ async function getTVShowData() {
     if (iframe) {
       iframe.src = `https://www.vidking.net/embed/tv/${ID}/${season}/${episode}?color=9146ff`;
 
-      // 🔒 Sandbox protection
+      // 🔒 STRICT sandbox (no same-origin)
       iframe.setAttribute(
         "sandbox",
-        "allow-scripts allow-same-origin allow-presentation"
+        "allow-scripts allow-presentation"
       );
 
       // 🔒 Hide referrer
@@ -44,19 +44,6 @@ async function getTVShowData() {
   } catch (error) {
     console.error("Error fetching TV show data:", error);
   }
-}
-
-// 🔥 GLOBAL DEFENSE (same as your working example)
-if (window.top !== window.self) {
-  // Kill popup attempts
-  window.open = () => null;
-
-  // Block link hijacking
-  document.addEventListener("click", (e) => {
-    if (e.target.closest("a")) {
-      e.preventDefault();
-    }
-  });
 }
 
 function populateSeasonSelector(seasons, currentSeason, currentEpisode) {
