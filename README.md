@@ -3,8 +3,8 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://movies.ch3n.cc">
-    <img src="https://raw.githubusercontent.com/RedNotSus/gms-movies/refs/heads/main/img/logo.png" alt="Logo">
+  <a href="https://gms-movies-omega.vercel.app/">
+    <img src="https://raw.githubusercontent.com/the-oblyv/gms-movies/refs/heads/main/img/logo.png" alt="Logo">
   </a>
 
 <h3 align="center">Moviiflix</h3>
@@ -13,11 +13,11 @@
     The Fastest, Cleanest way to watch your favorite movies and tv shows for free!
     <br />
     <br />
-    <a href="https://movies.ch3n.cc">View Demo</a>
+    <a href="https://gms-movies-omega.vercel.app/">View Demo</a>
     ·
-    <a href="https://github.com/RedNotSus/gms-movies/issues">Report Bug</a>
+    <a href="https://github.com/the-oblyv/gms-movies/issues">Report Bug</a>
     ·
-    <a href="https://github.com/RedNotSus/gms-movies/issues">Request Feature</a>
+    <a href="https://github.com/the-oblyv/gms-movies/issues">Request Feature</a>
   </p>
 </div>
 
@@ -73,7 +73,7 @@ To get a local copy up and running follow these simple example steps.
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/RedNotSus/gms-movies.git
+   git clone https://github.com/the-oblyv/gms-movies.git
    ```
 2. Open index.html
    ```sh
@@ -123,8 +123,8 @@ Don't forget to give the project a star! Thanks again!
 
 ### Top contributors:
 
-<a href="https://github.com/rednotsus/gms-movies/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=rednotsus/gms-movies" alt="contrib.rocks image" />
+<a href="https://github.com/the-oblyv/gms-movies/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=the-oblyv/gms-movies" alt="contrib.rocks image" />
 </a>
 
 <!-- LICENSE -->
