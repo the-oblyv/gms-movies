@@ -32,7 +32,7 @@ async function getTVShowData() {
     // 🎥 Iframe setup
     const iframe = document.getElementById("iframe");
     if (iframe) {
-      iframe.src = `https://nebulaflix.stream/?st=${show.imdb_id}&season=${season}&episode=${episode}&server=1`;
+      iframe.src = `https://nebulaflix.stream/player?st=${ID}&season=${season}&episode=${episode}&server=1`;
 
       // 🔒 STRICT sandbox (no same-origin)
       iframe.setAttribute(
