@@ -14,7 +14,7 @@ async function getTVShowData() {
 
   if (season && episode) {
     if (iframe) {
-      iframe.src = `https://nebulaflix.stream/show?st=${ID}&season=${season}&episode=${episode}&server=1`;
+      iframe.src = `https://nebulaflix.stream/?st=${ID}&season=${season}&episode=${episode}&server=1`;
 
       // 🔒 STRICT sandbox (no same-origin)
       iframe.setAttribute(

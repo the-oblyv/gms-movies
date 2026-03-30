@@ -7,20 +7,20 @@
   ],
   "headers": [
     {
-      "source": "/watch/movie.html",
+      "source": "/watch/movie",
       "headers": [
         {
           "key": "Content-Security-Policy",
-          "value": "frame-src https://nebulaflix.stream; script-src 'self' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self' https://api.themoviedb.org;"
+          "value": "frame-src https://nebulaflix.stream; script-src 'self' https://www.googletagmanager.com https://ka-f.fontawesome.com https://kit.fontawesome.com; style-src 'self' 'unsafe-inline' https://ka-f.fontawesome.com https://kit.fontawesome.com; img-src 'self' data: https:; connect-src 'self' https://api.themoviedb.org; font-src 'self' https://ka-f.fontawesome.com;"
         }
       ]
     },
     {
-      "source": "/watch/tv.html",
+      "source": "/watch/tv",
       "headers": [
         {
           "key": "Content-Security-Policy",
-          "value": "frame-src https://nebulaflix.stream; script-src 'self' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self' https://api.themoviedb.org;"
+          "value": "frame-src https://nebulaflix.stream; script-src 'self' https://www.googletagmanager.com https://ka-f.fontawesome.com https://kit.fontawesome.com; style-src 'self' 'unsafe-inline' https://ka-f.fontawesome.com https://kit.fontawesome.com; img-src 'self' data: https:; connect-src 'self' https://api.themoviedb.org; font-src 'self' https://ka-f.fontawesome.com;"
         }
       ]
     }
