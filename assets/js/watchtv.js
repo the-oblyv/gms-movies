@@ -8,7 +8,7 @@ async function getTVShowData() {
   const episode = new URLSearchParams(window.location.search).get("e");
   if (season && episode) {
     const iframe = document.getElementById("iframe");
-    iframe.src = `https://www.vidking.net/embed/tv/${ID}/${season}/${episode}?nextEpisode=true&autoPlay=false&color=9146ff';
+    iframe.src = `https://www.vidking.net/embed/tv/${ID}/${season}/${episode}?color=9146ff';
   } else {
     location.href = `tv?id=${ID}&s=1&e=1`;
   }
