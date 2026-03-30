@@ -1,5 +1,7 @@
 async function getMovie() {
-  const ID = new URLSearchParams(window.location.search).get("id");
+  const params = new URLSearchParams(window.location.search);
+  const ID = params.get("id");
+
   if (!ID) {
     window.location.href = "/";
     return;
@@ -15,40 +17,30 @@ async function getMovie() {
 
     const movie = await response.json();
 
+    // 🎬 Title
     const titleElement = document.getElementById("titletext");
     if (titleElement) {
-      titleElement.innerHTML = movie.title;
+      titleElement.textContent = movie.title;
     }
 
+    // 🎥 Iframe setup
     const iframe = document.getElementById("iframe");
     if (iframe) {
       iframe.src = `https://www.vidking.net/embed/movie/${ID}?color=9146ff`;
 
-      // ✅ Sandbox
+      // 🔒 STRICT sandbox (no same-origin)
       iframe.setAttribute(
         "sandbox",
-        "allow-scripts allow-same-origin allow-presentation"
+        "allow-scripts allow-presentation"
       );
 
-      // ✅ Referrer protection
+      // 🔒 Hide referrer
       iframe.setAttribute("referrerpolicy", "no-referrer");
     }
+
   } catch (error) {
     console.log("Error fetching data:", error);
   }
-}
-
-// 🔥 GLOBAL DEFENSE (IMPORTANT)
-if (window.top !== window.self) {
-  // Kill popup attempts
-  window.open = () => null;
-
-  // Block link hijacking
-  document.addEventListener("click", (e) => {
-    if (e.target.closest("a")) {
-      e.preventDefault();
-    }
-  });
 }
 
 document.addEventListener("DOMContentLoaded", function () {
