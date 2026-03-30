@@ -4,5 +4,25 @@
     { "source": "/watch/movie", "destination": "/watch/movie.html" },
     { "source": "/watch/tv", "destination": "/watch/tv.html" },
     { "source": "/tv", "destination": "/tv.html" }
+  ],
+  "headers": [
+    {
+      "source": "/watch/movie.html",
+      "headers": [
+        {
+          "key": "Content-Security-Policy",
+          "value": "frame-src https://nebulaflix.stream; script-src 'self' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self' https://api.themoviedb.org;"
+        }
+      ]
+    },
+    {
+      "source": "/watch/tv.html",
+      "headers": [
+        {
+          "key": "Content-Security-Policy",
+          "value": "frame-src https://nebulaflix.stream; script-src 'self' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self' https://api.themoviedb.org;"
+        }
+      ]
+    }
   ]
 }
