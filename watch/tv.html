@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-26MNY5FFJJ"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -24,7 +23,45 @@
     <meta http-equiv="Cache-control" content="public">
     <meta charset="utf-8">
     <meta name="description" content="Watch your favorite movies, tv shows, and anime for free on Moviiflix!" />
-    </script>
+
+    <style>
+        /* Custom styles for the Play button positioning */
+        .game {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .controls-container {
+            padding: 10px 0;
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        #playPauseBtn {
+            background-color: #e50914; /* Moviiflix Red */
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            cursor: pointer;
+            font-size: 14px;
+            border-radius: 4px;
+            font-family: inherit;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: background 0.2s ease;
+        }
+
+        #playPauseBtn:hover {
+            background-color: #b20710;
+        }
+
+        #playPauseBtn:active {
+            transform: scale(0.98);
+        }
+    </style>
+
     <script src="/assets/js/watchtv.js"></script>
 </head>
 
@@ -34,16 +71,21 @@
             <a id="nav-title" href="/"><img src="/img/logo.png" alt="Moviiflix Logo"></a>
             <a href="/movies"><i class="fa-solid fa-video">&nbsp;</i>Movies</a>
             <a href="/tv"><i class="fa-solid fa-tv">&nbsp;</i>TV Series</a>
-
         </div>
     </nav>
+
     <div id="gameframe">
         <div class="gameDisplay">
             <div class="game">
                 <iframe id="iframe" src="" allowfullscreen></iframe>
+                
+                <div class="controls-container">
+                    <button id="playPauseBtn" title="Simulate Spacebar">
+                        <i class="fa-solid fa-play"></i>
+                        <span>Play / Pause</span>
+                    </button>
+                </div>
             </div>
-
-
         </div>
 
         <div class="episode-selector">
@@ -52,8 +94,40 @@
             </div>
             <div id="episodeList" class="scrollable-box"></div>
         </div>
+    </div>
 
+    <script>
+        document.getElementById('playPauseBtn').addEventListener('click', function() {
+            const iframe = document.getElementById('iframe');
 
+            // 1. Focus the iframe so it can receive the command
+            iframe.focus();
+
+            // 2. Create the Spacebar event
+            const spaceEvent = new KeyboardEvent('keydown', {
+                key: ' ',
+                code: 'Space',
+                keyCode: 32,
+                which: 32,
+                bubbles: true,
+                cancelable: true
+            });
+
+            // 3. Dispatch the event to the document
+            // Note: If the iframe is from a different domain (cross-origin), 
+            // the focus() call is the most reliable way to make the player toggle.
+            document.dispatchEvent(spaceEvent);
+            
+            // Attempt to dispatch directly to the iframe window 
+            // (Works only if hosted on the same domain)
+            try {
+                iframe.contentWindow.document.dispatchEvent(spaceEvent);
+            } catch (e) {
+                // Cross-origin prevents direct dispatch, but focus() usually handles it
+                console.log("Cross-origin restriction: Standard focus applied.");
+            }
+        });
+    </script>
 </body>
 
 </html>
